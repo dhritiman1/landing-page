@@ -105,7 +105,16 @@ dd {
     --ff-size-700: 2.25rem;
     --ff-size-900: 3rem;
 
+    --ff-android-size-100: 13px;
+    --ff-android-size-300: 14px;
+    --ff-android-size-500: 19px;
+    --ff-android-size-700: 1.5rem;
+    --ff-android-size-800: 1.7rem;
+    --ff-android-size-900: 2rem;
+
     --img-width: 270px;
+
+    --img-width-android: 220px;
 }
 
 .content-holder {
@@ -150,13 +159,13 @@ svg:hover {
     width: 50vw;
 }
 
-h1 {
+.content-column-1 h1 {
     font-size: var(--ff-size-900);
     font-weight: bold;
     color: var(--color-accent-900);
 }
 
-p {
+.content-column-1 p {
     font-size: var(--ff-size-300);
     color: #1d1d1d;
 }
@@ -300,7 +309,7 @@ h2 {
 
 .footer {
     display: flex;
-    flex: 1;
+    flex: 1 1 0;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -314,10 +323,11 @@ h2 {
     padding-right: 6vw;
 }
 
-.opening-info p{
+.opening-info p {
     font-size: var(--ff-size-100);
     color: var(--color-accent-100);
     text-align: center;
+    font-weight: 200;
 }
 
 h3 {
@@ -327,6 +337,7 @@ h3 {
     text-align: center;
 }
 
+
 .foot-nav {
     display: flex;
     flex-direction: column;
@@ -334,20 +345,22 @@ h3 {
     padding-left: 6vw;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-li a{
+.opening-info a,
+.foot-nav a {
     color: var(--color-accent-100);
     font-size: var(--ff-size-100);
     text-decoration: none;
     text-align: center;
+    transition: 0.3s;
+    font-weight: 200;
 }
 
-.footer-socials svg{
+.opening-info a:hover,
+.foot-nav a:hover {
+    color: var(--color-accent-700);
+}
+
+.footer-socials svg {
     margin: 0 5px;
 }
 
@@ -366,35 +379,160 @@ li a{
 }
 
 @media screen and (max-width: 768px) {
-    .content{
+    .content {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .content-column-1{
+    .content-column-1 {
         align-items: center;
         justify-content: center;
         text-align: center;
         padding: 2vh 2vw;
     }
 
-    .content-column-2{
+    .content-column-1 h1 {
+        text-align: center;
+    }
+
+    .content-column-2 {
         padding: 2vh 2vw;
         width: 80vw;
         justify-content: center;
         align-items: center;
     }
 
-    img{
+    img {
         width: 70vw;
     }
 
-    .nav{
+    .nav {
         padding: 10px 6vw;
     }
 
-    svg{
-        margin: 0 5px;
+    svg {
+        margin: 0;
+    }
+
+    .footer-socials svg {
+        margin: 0;
+        padding-bottom: 6px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .nav {
+        padding-bottom: 0;
+    }
+
+    .socials {
+        align-self: center;
+    }
+
+    svg {
+        height: 25px;
+        margin: 0;
+    }
+
+    .content{
+        padding-bottom: 6vh;
+    }
+    .content-column-1 {
+        padding: 1.2vh 1vw;
+    }
+
+    .content-column-1 h1 {
+        font-size: var(--ff-android-size-900);
+    }
+
+    .content-column-1 p {
+        font-size: var(--ff-android-size-300);
+    }
+
+    button {
+        font-size: var(--ff-android-size-100);
+    }
+
+    .content-column-2 {
+        padding: 1.2vh 1vw;
+        width: 90vw;
+    }
+
+    img {
+        width: 85vw;
+    }
+
+    h2 {
+        font-size: var(--ff-android-size-800);
+        padding-bottom: 0;
+    }
+
+    .cat-list {
+        padding-bottom: 40px;
+    }
+
+    .cats {
+        margin-bottom: 3.2vh;
+        width: var(--img-width-android);
+    }
+
+    .about {
+        width: var(--img-width-android);
+        height: var(--img-width-android);
+    }
+
+    .about p {
+        font-size: var(--ff-android-size-100);
+    }
+
+    .quote {
+        height: 225px;
+    }
+
+    .quote p {
+        font-size: var(--ff-android-size-700);
+    }
+
+    .footer-holder {
+        height: 280px;
+    }
+
+    .footer {
+        margin: 0 15vw;
+        height: 210px;
+    }
+
+    h3 {
+        font-size: var(--ff-android-size-500);
+        padding: 2px;
+    }
+
+    .opening-info p,
+    .opening-info a,
+    .foot-nav a {
+        font-size: var(--ff-android-size-300);
+    }
+
+    .opening-info {
+        padding-right: 3vw;
+    }
+
+    .foot-nav {
+        padding-left: 3vw;
+    }
+
+    .footer-socials svg {
+        width: 30px;
+        margin: 0;
+        padding-bottom: 6px;
+    }
+
+    .copyright {
+        padding: 12px;
+    }
+
+    .copyright p{
+        font-size: 11px;
     }
 }
